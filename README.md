@@ -1,2 +1,6 @@
 # APCS-Final-Project
-4 gods embark on a mission to do the unthinkable 
+Contributors: Bruce Moe, Tyler Kerch, Conrad Barron, and Akhil Mathew
+
+TO RUN
+-Go to src file
+-Run GameMenuDemo
