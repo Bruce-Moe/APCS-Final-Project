@@ -139,7 +139,7 @@ public class GameMenuDemo extends Application
 		StackPane moneyContainer = new StackPane();
 		
 		//Background Image
-		try (InputStream is = Files.newInputStream(Paths.get("res/imgs/TYLERKERCHISGAY.png")))
+		try (InputStream is = Files.newInputStream(Paths.get("res/imgs/BackgroundMain.png")))
 		{
 			ImageView img = new ImageView(new Image(is));
 			img.setFitWidth(Screen.getPrimary().getVisualBounds().getWidth());
@@ -157,6 +157,7 @@ public class GameMenuDemo extends Application
 		trainTroops.setGraphic(new ImageView(imageTrain));
 		trainTroops.setTranslateX(Screen.getPrimary().getVisualBounds().getWidth() - 350);
 		trainTroops.setTranslateY(80);
+		TroopControl troopControl = new TroopControl(root);
 		
 		//Turret Button
 		FileInputStream inputstream2 = new FileInputStream("res/imgs/turret.png"); 
@@ -265,7 +266,48 @@ public class GameMenuDemo extends Application
 		//root.getChildren().addAll(label1);
 		root.getChildren().addAll(moneyContainer);
 		
+		trainTroops.setOnMouseClicked(e -> {
+			root.getChildren().removeAll(trainTroops, buildTurret, evolve, label1, special, audio);
+			
+			
+				FileInputStream inputstream7 = null;
+				try
+				{
+					inputstream7 = new FileInputStream("res/imgs/troop.jpg");
+				} catch (FileNotFoundException e1)
+				{
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+				Image imageTroopClone = new Image(inputstream7, 50, 50, false, false); 
+				Button troopClone = new Button();
+				troopClone.setGraphic(new ImageView(imageTrain));
+				troopControl.setTroop(troopClone);
+				try
+				{
+					
+					troopControl.setMenu();
+				} catch (FileNotFoundException e1)
+				{
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
+			
+			troopClone.setOnMouseClicked(f ->{
+				root.getChildren().addAll(trainTroops, buildTurret, evolve, label1, special, audio);
+				troopControl.removeTroops();
+			});
+		});
+		
+	
+		
 		return root;
+	}
+	
+	protected void reset()
+	{
+		
 	}
 
 	private void playAudio(boolean val)
