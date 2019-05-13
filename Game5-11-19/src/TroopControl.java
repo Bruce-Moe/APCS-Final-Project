@@ -17,6 +17,7 @@ public class TroopControl extends GameMenuDemo
 	private Button troop;
 	private Pane root;
 	private Button one;
+	private Button zero;
 	private Stage window;
 	private Label label1;
 	
@@ -50,11 +51,17 @@ public class TroopControl extends GameMenuDemo
 		one.setGraphic(new ImageView(imageOne));
 		one.setTranslateX(window.getWidth() * .66145833);
 		one.setTranslateY(window.getHeight() * .07692308);
+		FileInputStream inputstream3 = new FileInputStream("res/imgs/zero.jpg"); 
+		Image imageZero = new Image(inputstream3, window.getHeight() * .065, window.getHeight() * .065, false, false);
+		zero = new Button();
+		zero.setGraphic(new ImageView(imageZero));
+		zero.setTranslateX(window.getWidth() * .71145833);
+		zero.setTranslateY(window.getHeight() * .07692308);
 		label1 = new Label("Troop");
 		label1.setFont(Font.font("Verdana", FontWeight.BOLD, window.getHeight() * .04));
 		label1.setTranslateX(window.getWidth() * .7578125);
 		label1.setTranslateY(window.getHeight() * .02425);
-		root.getChildren().addAll(one, label1);
+		root.getChildren().addAll(one, zero, label1);
 		listenOne();
 	}
 	
@@ -84,6 +91,10 @@ public class TroopControl extends GameMenuDemo
 		});
 	}
 	
+	public void listenTwo()
+	{
+		
+	}
 	public ImageView createTroop(Attacker a) throws Exception
 	{
 		ImageView img = new ImageView();
