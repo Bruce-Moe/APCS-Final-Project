@@ -117,8 +117,8 @@ public class TroopControl extends GameMenuDemo
 				ZeroBullet z = new ZeroBullet();
 			try
 			{
-				ImageView img = createTroop(o, true);
-				root.getChildren().add(img);
+			
+				
 				Image m = new Image(new FileInputStream("res/imgs/dot.png"), window.getHeight() * .02, window.getHeight() * .02, false, false);
 				ImageView img2 = new ImageView(m);
 				img2.setTranslateX(-window.getWidth());
@@ -126,8 +126,8 @@ public class TroopControl extends GameMenuDemo
 				img2.setRotate(90);
 				z.setImage(img2);
 				zeroBulletsFriendly.add(z);
-				root.getChildren().add(img2);
-				
+				ImageView img = createTroop(o, true);
+				root.getChildren().addAll(img, img2);
 				
 			} catch (Exception e1)
 			{
