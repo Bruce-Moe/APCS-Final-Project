@@ -135,15 +135,20 @@ public class GameMenuDemo extends Application
 		
 		});
 
+		Label text = new Label("The goal of the game is to survive and destroy the enemy base. \nThe game is divided into 2 stages. To move to the next stage,\nyou need to gain XP points. \nTo gain these points, you have to kill enemy units. \nYou also gain XP points when one of your units are killed. \nYou cannot repair your base, so protect your base at all costs!");
+		text.setTextFill(Color.WHITE);
+		text.setFont(Font.font("Verdana", FontWeight.NORMAL, window.getHeight() * .03));
+		text.setTranslateX(100);
+		text.setTranslateY(225);
 		MenuBox menu = new MenuBox(back);
 		menu.setTranslateX(290);
 		menu.setTranslateY(500);
 
-		root.getChildren().addAll(menu);
+		root.getChildren().addAll(menu, text);
 		return root;
 	}
 
-	private Parent createCredits()
+	private Parent createCredits() throws FileNotFoundException
 	{
 		Pane root = new Pane();
 		root.setPrefSize(800, 600);
@@ -165,8 +170,54 @@ public class GameMenuDemo extends Application
 		MenuBox menu = new MenuBox(back);
 		menu.setTranslateX(290);
 		menu.setTranslateY(500);
+		
+		FileInputStream tyler = new FileInputStream("res/imgs/tyler.jpg"); 
+		Image tylerk = new Image(tyler, 175, 200, false, false); 
+		ImageView tylerkerch = new ImageView(tylerk);
+		tylerkerch.setTranslateX(15);
+		tylerkerch.setTranslateY(175);
+		Label textT = new Label("Tyler Kerch");
+		textT.setTextFill(Color.WHITE);
+		textT.setFont(Font.font("Verdana", FontWeight.NORMAL, window.getHeight() * .03));
+		textT.setTranslateX(15);
+		textT.setTranslateY(375);
 
-		root.getChildren().addAll(menu);
+		
+		FileInputStream bruce = new FileInputStream("res/imgs/bruce.jpg"); 
+		Image brucem = new Image(bruce, 175, 200, false, false); 
+		ImageView brucemoe = new ImageView(brucem);
+		brucemoe.setTranslateX(215);
+		brucemoe.setTranslateY(175);
+		Label textB = new Label("Bruce Moe");
+		textB.setTextFill(Color.WHITE);
+		textB.setFont(Font.font("Verdana", FontWeight.NORMAL, window.getHeight() * .03));
+		textB.setTranslateX(215);
+		textB.setTranslateY(375);
+		
+		
+		FileInputStream conrad = new FileInputStream("res/imgs/conrad.jpg"); 
+		Image conradb = new Image(conrad, 175, 200, false, false); 
+		ImageView conradbarron = new ImageView(conradb);
+		conradbarron.setTranslateX(415);
+		conradbarron.setTranslateY(175);
+		Label textC = new Label("Conrad Barron");
+		textC.setTextFill(Color.WHITE);
+		textC.setFont(Font.font("Verdana", FontWeight.NORMAL, window.getHeight() * .03));
+		textC.setTranslateX(415);
+		textC.setTranslateY(375);
+		
+		FileInputStream akhil = new FileInputStream("res/imgs/akhil.jpg"); 
+		Image akhilm = new Image(akhil, 175, 200, false, false); 
+		ImageView akhilmathew = new ImageView(akhilm);
+		akhilmathew.setTranslateX(615);
+		akhilmathew.setTranslateY(175);
+		Label textA = new Label("Akhil Mathew");
+		textA.setTextFill(Color.WHITE);
+		textA.setFont(Font.font("Verdana", FontWeight.NORMAL, window.getHeight() * .03));
+		textA.setTranslateX(615);
+		textA.setTranslateY(375);
+		
+		root.getChildren().addAll(menu, tylerkerch, brucemoe, conradbarron, akhilmathew, textA, textT, textB, textC);
 		return root;
 	}
 
@@ -216,6 +267,7 @@ public class GameMenuDemo extends Application
 		trainTroops.setTranslateY(window.getHeight() * .07692308);
 		TroopControl troopControl = new TroopControl();
 		troopControl.setRoot(root);
+		
 		
 		
 		
