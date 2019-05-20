@@ -1,5 +1,6 @@
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import javafx.scene.control.Button;
@@ -68,13 +69,13 @@ public class TroopControl extends GameMenuDemo
 		troop.setTranslateX(window.getWidth() * .86979167);
 		troop.setTranslateY(window.getHeight() * .07692308);
 		root.getChildren().add(troop);
-		FileInputStream inputstream2 = new FileInputStream("res/imgs/one.png"); 
+		InputStream inputstream2 = getClass().getResourceAsStream("res/one.png"); 
 		Image imageOne = new Image(inputstream2, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 		one = new Button();
 		one.setGraphic(new ImageView(imageOne));
 		one.setTranslateX(window.getWidth() * .66145833);
 		one.setTranslateY(window.getHeight() * .07692308);
-		FileInputStream inputstream3 = new FileInputStream("res/imgs/zero.png"); 
+		InputStream inputstream3 = getClass().getResourceAsStream("res/zero.png"); 
 		Image imageZero = new Image(inputstream3, window.getHeight() * .065, window.getHeight() * .065, false, false);
 		zero = new Button();
 		zero.setGraphic(new ImageView(imageZero));
@@ -89,7 +90,7 @@ public class TroopControl extends GameMenuDemo
 		listenZero();
 		if(godLevel)
 		{
-			FileInputStream inputstream4 = new FileInputStream("res/imgs/EZMoney.png"); 
+			InputStream inputstream4 = getClass().getResourceAsStream("res/EZMoney.png"); 
 			Image imageGod = new Image(inputstream4, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 			god = new Button();
 			god.setGraphic(new ImageView(imageGod));
@@ -112,7 +113,7 @@ public class TroopControl extends GameMenuDemo
 	
 	public void removeTroops()
 	{
-		root.getChildren().removeAll(one, troop, label1, oneLabel, zeroLabel);
+		root.getChildren().removeAll(one, zero, troop, label1, oneLabel, zeroLabel);
 		if(godLevel)
 			root.getChildren().removeAll(god, godLabel);
 	}
@@ -152,7 +153,7 @@ public class TroopControl extends GameMenuDemo
 			{
 			
 				
-				Image m = new Image(new FileInputStream("res/imgs/dot.png"), window.getHeight() * .02, window.getHeight() * .02, false, false);
+				Image m = new Image(getClass().getResourceAsStream("res/dot.png"), window.getHeight() * .02, window.getHeight() * .02, false, false);
 				ImageView img2 = new ImageView(m);
 				img2.setTranslateX(-window.getWidth());
 				img2.setTranslateY(0);
@@ -211,7 +212,7 @@ public class TroopControl extends GameMenuDemo
 			if(a instanceof One)
 			{
 				
-				Image m = new Image(new FileInputStream("res/imgs/one.png"), window.getHeight() * .105, window.getHeight() * .105, false, false);
+				Image m = new Image(getClass().getResourceAsStream("res/one.png"), window.getHeight() * .105, window.getHeight() * .105, false, false);
 				img = new ImageView(m);
 				img.setTranslateX(window.getWidth() * .117333);
 				img.setTranslateY(window.getHeight() * .814269231);
@@ -220,7 +221,7 @@ public class TroopControl extends GameMenuDemo
 			}
 			if(a instanceof Zero)
 			{
-				Image m = new Image(new FileInputStream("res/imgs/zero.png"), window.getHeight() * .105, window.getHeight() * .105, false, false);
+				Image m = new Image(getClass().getResourceAsStream("res/zero.png"), window.getHeight() * .105, window.getHeight() * .105, false, false);
 				img = new ImageView(m);
 				img.setTranslateX(window.getWidth() * .117333);
 				img.setTranslateY(window.getHeight() * .814269231);
@@ -232,7 +233,7 @@ public class TroopControl extends GameMenuDemo
 		{
 			if(a instanceof One)
 			{
-				FileInputStream inputstream2 = new FileInputStream("res/imgs/one.png");
+				InputStream inputstream2 = getClass().getResourceAsStream("res/one.png");
 				Image m = new Image(inputstream2, window.getHeight() * .105, window.getHeight() * .105, false, false);
 				img = new ImageView(m);
 				img.setTranslateX(window.getWidth() * .827333);
@@ -245,7 +246,7 @@ public class TroopControl extends GameMenuDemo
 			if(a instanceof Zero)
 			{
 				
-				Image m = new Image(new FileInputStream("res/imgs/zero.png"), window.getHeight() * .105, window.getHeight() * .105, false, false);
+				Image m = new Image(getClass().getResourceAsStream("res/zero.png"), window.getHeight() * .105, window.getHeight() * .105, false, false);
 				img = new ImageView(m);
 				img.setTranslateX(window.getWidth() * .827333);
 				img.setTranslateY(window.getHeight() * .814269231);
@@ -296,7 +297,7 @@ public class TroopControl extends GameMenuDemo
 	public ImageView createEnemyBullet() throws Exception
 	{
 		ZeroBullet z = new ZeroBullet();
-		Image mo = new Image(new FileInputStream("res/imgs/dot.png"), window.getHeight() * .02, window.getHeight() * .02, false, false);
+		Image mo = new Image(getClass().getResourceAsStream("res/dot.png"), window.getHeight() * .02, window.getHeight() * .02, false, false);
 		ImageView img2 = new ImageView(mo);
 		img2.setTranslateX(-window.getWidth());
 		img2.setTranslateY(0);

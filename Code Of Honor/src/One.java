@@ -1,4 +1,4 @@
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -51,7 +51,7 @@ public class One extends Attacker
 	
 	public void god() throws Exception
 	{
-		Image m = new Image(new FileInputStream("src/imgs/EZMoney.png"), window.getHeight() * .125, window.getHeight() * .125, false, false);
+		Image m = new Image(getClass().getResourceAsStream("res/EZMoney.png"), window.getHeight() * .125, window.getHeight() * .125, false, false);
 		img.setImage(m);
 		img.setTranslateX(window.getWidth() * .117333);
 		img.setTranslateY(window.getHeight() * .794269231);

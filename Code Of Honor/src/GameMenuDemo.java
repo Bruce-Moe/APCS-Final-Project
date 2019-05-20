@@ -1,4 +1,6 @@
-import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.Reader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -59,7 +61,7 @@ public class GameMenuDemo extends Application
 		Pane root = new Pane();
 		root.resize(790, 590);
 		
-		try (InputStream is = Files.newInputStream(Paths.get("res/imgs/Code_of_Honor.jpg")))
+		try (InputStream is = getClass().getResourceAsStream("res/Code_of_Honor.jpg"))
 		{
 			ImageView img = new ImageView(new Image(is));
 			img.setFitWidth(800);
@@ -111,7 +113,7 @@ public class GameMenuDemo extends Application
 		Pane root = new Pane();
 		root.setPrefSize(800, 600);
 
-		try (InputStream is = Files.newInputStream(Paths.get("res/imgs/Code_of_Honor.jpg")))
+		try (InputStream is = getClass().getResourceAsStream("res/Code_of_Honor.jpg"))
 		{
 			ImageView img = new ImageView(new Image(is));
 			img.setFitWidth(800);
@@ -155,7 +157,7 @@ public class GameMenuDemo extends Application
 		Pane root = new Pane();
 		root.setPrefSize(800, 600);
 
-		try (InputStream is = Files.newInputStream(Paths.get("res/imgs/Code_of_Honor.jpg")))
+		try (InputStream is = getClass().getResourceAsStream("res/Code_of_Honor.jpg"))
 		{
 			ImageView img = new ImageView(new Image(is));
 			img.setFitWidth(800);
@@ -173,7 +175,7 @@ public class GameMenuDemo extends Application
 		menu.setTranslateX(290);
 		menu.setTranslateY(500);
 		
-		FileInputStream tyler = new FileInputStream("res/imgs/tyler.jpg"); 
+		InputStream tyler = getClass().getResourceAsStream("res/tyler.jpg"); 
 		Image tylerk = new Image(tyler, 175, 200, false, false); 
 		ImageView tylerkerch = new ImageView(tylerk);
 		tylerkerch.setTranslateX(15);
@@ -185,7 +187,7 @@ public class GameMenuDemo extends Application
 		textT.setTranslateY(375);
 
 		
-		FileInputStream bruce = new FileInputStream("res/imgs/bruce.jpg"); 
+		InputStream bruce = getClass().getResourceAsStream("res/bruce.jpg"); 
 		Image brucem = new Image(bruce, 175, 200, false, false); 
 		ImageView brucemoe = new ImageView(brucem);
 		brucemoe.setTranslateX(215);
@@ -197,7 +199,7 @@ public class GameMenuDemo extends Application
 		textB.setTranslateY(375);
 		
 		
-		FileInputStream conrad = new FileInputStream("res/imgs/conrad.jpg"); 
+		InputStream conrad = getClass().getResourceAsStream("res/conrad.jpg"); 
 		Image conradb = new Image(conrad, 175, 200, false, false); 
 		ImageView conradbarron = new ImageView(conradb);
 		conradbarron.setTranslateX(415);
@@ -208,7 +210,7 @@ public class GameMenuDemo extends Application
 		textC.setTranslateX(415);
 		textC.setTranslateY(375);
 		
-		FileInputStream akhil = new FileInputStream("res/imgs/akhil.jpg"); 
+		InputStream akhil = getClass().getResourceAsStream("res/akhil.jpg"); 
 		Image akhilm = new Image(akhil, 175, 200, false, false); 
 		ImageView akhilmathew = new ImageView(akhilm);
 		akhilmathew.setTranslateX(615);
@@ -232,7 +234,7 @@ public class GameMenuDemo extends Application
 		window.setX(Screen.getPrimary().getVisualBounds().getWidth() * .125);
 		window.setY(Screen.getPrimary().getVisualBounds().getHeight() * .125);
 		//Background Image
-		try (InputStream is = Files.newInputStream(Paths.get("res/imgs/Background Main.jpg")))
+		try (InputStream is = getClass().getResourceAsStream("res/Background Main.jpg"))
 		{
 			ImageView img = new ImageView(new Image(is));
 		
@@ -247,13 +249,13 @@ public class GameMenuDemo extends Application
 
 		
 		//Evolution Base 1
-		FileInputStream inputstream0 = new FileInputStream("res/imgs/Evolution1.png"); 
+		InputStream inputstream0 = getClass().getResourceAsStream("res/Evolution1.png"); 
 		Image imageBase1 = new Image(inputstream0, window.getHeight() * .31, window.getHeight() * .26, false, false); 
 		ImageView base1 = new ImageView(imageBase1);
 		base1.setTranslateX(0 - window.getWidth() * .022);
 		base1.setTranslateY(window.getHeight() * .7062308);
 		
-		FileInputStream inputstream00 = new FileInputStream("res/imgs/Evolution1E.png"); 
+		InputStream inputstream00 = getClass().getResourceAsStream("res/Evolution1E.png"); 
 		Image imageEBase1 = new Image(inputstream00, window.getHeight() * .31, window.getHeight() * .26, false, false); 
 		ImageView eBase1 = new ImageView(imageEBase1);
 		eBase1.setScaleX(-1);
@@ -261,7 +263,7 @@ public class GameMenuDemo extends Application
 		eBase1.setTranslateY(window.getHeight() * .7062308);
 
 		//Train  Button
-		FileInputStream inputstream1 = new FileInputStream("res/imgs/troop.png"); 
+		InputStream inputstream1 = getClass().getResourceAsStream("res/troop.png"); 
 		Image imageTrain = new Image(inputstream1, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 		Button trainTroops = new Button();
 		trainTroops.setGraphic(new ImageView(imageTrain));
@@ -273,7 +275,7 @@ public class GameMenuDemo extends Application
 		
 		
 		//Turret Button
-		FileInputStream inputstream2 = new FileInputStream("res/imgs/noTurret.png"); 
+		InputStream inputstream2 = getClass().getResourceAsStream("res/noTurret.png"); 
 		Image imageTurret = new Image(inputstream2, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 		Button buildTurret = new Button();
 		buildTurret.setGraphic(new ImageView(imageTurret));
@@ -281,7 +283,7 @@ public class GameMenuDemo extends Application
 		buildTurret.setTranslateY(window.getHeight() * .07692308);
 		
 		//Evolve Button
-		FileInputStream inputstream4 = new FileInputStream("res/imgs/evolve.png"); 
+		InputStream inputstream4 = getClass().getResourceAsStream("res/evolve.png"); 
 		Image imageEvolve = new Image(inputstream4, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 		Button evolve = new Button();
 		evolve.setGraphic(new ImageView(imageEvolve));
@@ -289,7 +291,7 @@ public class GameMenuDemo extends Application
 		evolve.setTranslateY(window.getHeight() * .07692308);
 		
 		//Special Ability Button
-		FileInputStream inputstream5 = new FileInputStream("res/imgs/noSpecial.png"); 
+		InputStream inputstream5 = getClass().getResourceAsStream("res/noSpecial.png"); 
 		Image imageSpecial = new Image(inputstream5, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 		Button special = new Button();
 		special.setGraphic(new ImageView(imageSpecial));
@@ -297,9 +299,9 @@ public class GameMenuDemo extends Application
 		special.setTranslateY(window.getHeight() * .07692308);
 		
 		//Audio Button
-		FileInputStream inputstream6 = new FileInputStream("res/imgs/music.png"); 
+		InputStream inputstream6 = getClass().getResourceAsStream("res/music.png"); 
 		Image imageAudio = new Image(inputstream6, window.getHeight() * .065, window.getHeight() * .065, false, false); 
-		FileInputStream inputstream7 = new FileInputStream("res/imgs/MusicOff.png"); 
+		InputStream inputstream7 = getClass().getResourceAsStream("res/MusicOff.png"); 
 		Image imageAudioOff = new Image(inputstream7, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 		Button audio = new Button();
 		audio.setGraphic(new ImageView(imageAudio));
@@ -311,7 +313,7 @@ public class GameMenuDemo extends Application
 		});
 		
 		//Cashbag Icon next to Money
-		FileInputStream inputstream3 = new FileInputStream("res/imgs/cashbag.png"); 
+		InputStream inputstream3 = getClass().getResourceAsStream("res/cashbag.png"); 
 		Image imageDollar = new Image(inputstream3, window.getHeight() * .0725, window.getHeight() * .0725, false, false); 
 		
 		ImageView money = new ImageView(imageDollar);
@@ -373,7 +375,7 @@ public class GameMenuDemo extends Application
 		money.setTranslateY(0 - window.getHeight() * .04768231);
 		
 		//XP Text
-		Label xpLabel = new Label("10000xp");
+		Label xpLabel = new Label("1000xp");
 		xpLabel.setFont(Font.font("Verdana", FontWeight.BOLD, window.getHeight() * .02));
 		xpLabel.setTranslateX(window.getWidth() * .7138125);
 		xpLabel.setTranslateY(window.getHeight() * .17425);
@@ -389,7 +391,7 @@ public class GameMenuDemo extends Application
 		
 		
 		//root.getChildren().addAll(rectangle);
-		root.getChildren().addAll(rectangle, friendlyHealth(), enemyHealth(), trainTroops, buildTurret, evolve, label1, xpLabel, special, audio, back, base1, eBase1);
+		root.getChildren().addAll(rectangle, friendlyHealth(), enemyHealth(), trainTroops, buildTurret, evolve, label1, xpLabel, audio, special, back, base1, eBase1);
 		//root.getChildren().addAll(label1);
 		root.getChildren().addAll(moneyContainer);
 		
@@ -397,11 +399,11 @@ public class GameMenuDemo extends Application
 			root.getChildren().removeAll(trainTroops, buildTurret, evolve, label1, special, audio, xpLabel);
 			
 			
-				FileInputStream inputstream8 = null;
+				InputStream inputstream8 = null;
 				try
 				{
-					inputstream8 = new FileInputStream("res/imgs/troop.png");
-				} catch (FileNotFoundException e1)
+					inputstream8 = getClass().getResourceAsStream("res/troop.png");
+				} catch (Exception e1)
 				{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -428,17 +430,17 @@ public class GameMenuDemo extends Application
 		});
 		
 		evolve.setOnMouseClicked(e -> {
-			if(xp >= 10000)
+			if(xp >= 1000)
 			{
 				root.getChildren().remove(base1);
 				try
 				{
-					Image imageBase2 = new Image(new FileInputStream("res/imgs/Evolution3.png"), window.getHeight() * .31, window.getHeight() * .26, false, false);
+					Image imageBase2 = new Image(getClass().getResourceAsStream("res/Evolution3.png"), window.getHeight() * .31, window.getHeight() * .26, false, false);
 					ImageView base2 = new ImageView(imageBase2);
 					base2.setTranslateX(0 - window.getWidth() * .022);
 					base2.setTranslateY(window.getHeight() * .7062308);
 					root.getChildren().add(base2);
-					FileInputStream inputstream10 = new FileInputStream("res/imgs/noEvolve.png"); 
+					InputStream inputstream10 = getClass().getResourceAsStream("res/noEvolve.png"); 
 					Image imageNoEvolve = new Image(inputstream10, window.getHeight() * .065, window.getHeight() * .065, false, false); 
 					evolve.setGraphic(new ImageView(imageNoEvolve));
 					evolve.setTranslateX(window.getWidth() * .71354167);
@@ -446,7 +448,7 @@ public class GameMenuDemo extends Application
 					xpLabel.setText("");
 					friendlyHealth += 100;
 					godLevel = true;
-				} catch (FileNotFoundException e1)
+				} catch (Exception e1)
 				{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -465,20 +467,22 @@ public class GameMenuDemo extends Application
 
 	private void playAudio(boolean val, Button b, Image on, Image off)
 	{
-		AudioClip music = new AudioClip(this.getClass().getResource("soundtrack.mp3").toString());
-		music.setVolume(0.7);
+		/*File path = new File("src/res/soundtrack.mp3");
+		Media music = new Media(path.toURI().toString());
+		MediaPlayer song = new MediaPlayer(music);
+		song.setVolume(0.7);
 		if(val)
 		{
 			if(b != null)
 				b.setGraphic(new ImageView(on));
-			music.play();
-			music.setCycleCount(AudioClip.INDEFINITE);
+			song.play();
+			song.setCycleCount(AudioClip.INDEFINITE);
 		}
 		else if(b != null)
 		{
 			b.setGraphic(new ImageView(off));
-			music.stop();
-		}
+			song.stop();
+		}*/
 	}
 	
 	@Override
@@ -651,11 +655,12 @@ public class GameMenuDemo extends Application
 					text.setText("HP: " + enemyHealth.toString());
 					try
 					{
-						Image img = new Image(new FileInputStream("res/imgs/happyStites.jpg"));
-						ImageView imgV = new ImageView(img);
+						InputStream img = getClass().getResourceAsStream("res/happyStites.jpg");
+						Image img2 = new Image(img);
+						ImageView imgV = new ImageView(img2);
 						imgV.setTranslateX(window.getWidth() * .5);
 						root.getChildren().add(imgV);
-					} catch (FileNotFoundException e)
+					} catch (Exception e)
 					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -709,10 +714,10 @@ public class GameMenuDemo extends Application
 
 					try
 					{
-						Image img = new Image(new FileInputStream("res/imgs/sponge.jpg"));
+						Image img = new Image(getClass().getResourceAsStream("res/sponge.jpg"));
 						ImageView imgV = new ImageView(img);
 						root.getChildren().add(imgV);
-					} catch (FileNotFoundException e)
+					} catch (Exception e)
 					{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
